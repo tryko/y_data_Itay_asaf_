@@ -1,0 +1,772 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Probability and Statistics - Final Assignment 
+\end_layout
+
+\begin_layout Author
+Submission by: Itay Koren
+\end_layout
+
+\begin_layout Problem
+During military training, three aircraft independently attacked a target,
+ each exactly once.
+ The first aircraft usually hits the target with a 0.6 probability, the second
+ with a 0.4 probability, and the third with a 0.3 probability.
+\end_layout
+
+\begin_layout Problem
+After the training, it turned out that only one aircraft had hit the target.
+\end_layout
+
+\begin_layout Problem
+What is the probability that the 3rd one hit it?
+\end_layout
+
+\begin_layout Subsection*
+Answer:
+\end_layout
+
+\begin_layout Standard
+Lets denote each aircraft as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{1},A_{2},A_{3}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P(A_{1})=0.6,P(A_{2})=0.4,P(A_{3})=0.3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Denote 
+\begin_inset Formula $B$
+\end_inset
+
+ Probability of only 1 aircraft.
+\begin_inset Formula 
+\[
+P(B)=P((A_{1}\cap A_{2}^{c}\cap A_{3}^{c})\cup(A_{1}\cap A_{2}\cap A_{3}^{c})\cup(A_{1}^{c}\cap A_{2}^{c}\cap A_{3})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+since we know 
+\begin_inset Formula $A_{1},A_{2},A_{3}$
+\end_inset
+
+ are indepenent, we can preform:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(B)\underset{independent}{=}\left(P(A_{1})\times P(A_{2}^{c})\times P(A_{3}^{c})\right)+\left(P(A_{1}^{c})\times P(A_{2})\times P(A_{3}^{c})\right)+\left(P(A_{1}^{c})\times P(A_{2}^{c})\times P(A_{3})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0.6\times0.6\times0.7+0.4\times0.4\times0.7+0.4\times0.6\times0.3=0.436
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To calculate the probability of only the third aircarft hitting:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(A_{1}^{c}\cap A_{2}^{c}\cap A_{3}|B)=\frac{P(A_{1}^{c}\cap A_{2}^{c}\cap A_{3})}{P(B)}=\frac{P(A_{1}^{c})\times P(A_{2}^{c})\times P(A_{3})}{P(B)}=\frac{0.4\times0.6\times0.3}{0.436}=0.165
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+A fair die is rolled until the total sum of points becomes 3 or more.
+ Let X denote the number of rolls until the above happens.
+\end_layout
+
+\begin_layout Problem
+Find the PMF and the CDF of X.
+ 
+\end_layout
+
+\begin_layout Problem
+Calculate 
+\begin_inset Formula $E\left(X\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(X)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Itemize
+PMF:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P(X=x)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[{3},{4},{5},{6}] = 4/6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{1,[2-5]},{2,[1-6]} = 1/6 * 5/6 + 1/6 * 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{1,1,[1-6]} = 1/6 * 1/6 * 1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CDF:
+\begin_inset Formula 
+\[
+P(X\le3)=\sum_{i=1}^{3}P(X=x_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+E(X)
+\begin_inset Formula 
+\[
+E(X)=x_{1}\cdot P(X=x_{1})+x_{2}\cdot P(X=x_{2})+x_{3}\cdot P(X=x_{3})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\overset{}{}=1\cdot4/6+2\cdot(1/6\cdot5/6+1/6)+3\cdot1/6\cdot1/6=1\frac{13}{36}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Var(X)
+\begin_inset Formula 
+\[
+Var(X)=E(X^{2})+E(X)^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\text{\underbar{}}=1^{2}\cdot4/6)+2^{2}\cdot(1/6\cdot5/6+1/6)+3^{2}\cdot1/6\cdot1/6-(1\frac{13}{36})^{2}\approx0.286
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Let X be a continuous random variable with PDF 
+\begin_inset Formula $f_{X}\left(x\right)=\frac{x}{4}$
+\end_inset
+
+ if 
+\begin_inset Formula $1<X\le3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(1) Verify that 
+\begin_inset Formula $f_{X}\left(x\right)$
+\end_inset
+
+ is indeed a PDF.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) Find 
+\begin_inset Formula $E\left(X\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Problem
+(3) Let 
+\begin_inset Formula $Y=X^{2}$
+\end_inset
+
+.
+ Find 
+\begin_inset Formula $E(Y)$
+\end_inset
+
+ and 
+\begin_inset Formula $Var(Y)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Problem
+(4) Let 
+\begin_inset Formula $A=\{X\ge2\}$
+\end_inset
+
+.
+ Find 
+\begin_inset Formula $P(A)$
+\end_inset
+
+, 
+\begin_inset Formula $f_{X}\left(x\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $E\left(X|A\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\mu,\sigma;\boldsymbol{X}\right) & =f_{X}\left(\mu,\sigma;x_{1}\cap x_{2}\cap\cdots\cap x_{n}\right)\\
+ & \underset{iid}{=}\prod_{i=1}^{n}\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x_{i}-\mu}{\sigma}\right)^{2}}=n\cdot\left(\sigma\sqrt{2\pi}\right)^{-1}e^{-\frac{1}{2}\sum_{i=1}^{n}\left(\frac{x_{i}-\mu}{\sigma}\right)^{2}}\\
+\iff\\
+\mathscr{\ell}\left(\mu,\sigma;\boldsymbol{X}\right) & =-n\cdot log\left(\sigma\sqrt{2\pi}\right)-\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}\\
+\\
+\frac{\partial\mathscr{\ell}\left(\mu,\sigma;\boldsymbol{X}\right)}{\partial\mu} & =-\frac{1}{2\sigma^{2}}2\sum_{i=1}^{n}\left(x_{i}-\mu\right)\cdot\left(-1\right)\underset{FOC}{=}0\iff n\mu=\sum_{i=1}^{n}x_{i}\implies\widehat{\mu}_{MLE}=\overline{X}\\
+\frac{\partial\mathscr{\ell}\left(\mu,\sigma;\boldsymbol{X}\right)}{\partial\sigma} & =-n\cdot\frac{1}{\sigma\sqrt{2\pi}}\cdot\sqrt{2\pi}-\frac{\left(-2\right)}{2\sigma^{3}}\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}\underset{FOC}{=}0\\
+ & \implies\widehat{\sigma}_{MLE}^{2}=\frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}=\frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\overline{X}\right)^{2}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Problem
+Let X1, ..., Xn be an i.i.d.
+ sample from the distribution with density 
+\begin_inset Formula $f_{\theta}(X)=\frac{X}{\theta}e^{\frac{x^{2}}{2\theta}}$
+\end_inset
+
+ x ≥ 0, θ ≥ 0
+\end_layout
+
+\begin_layout Standard
+(1) Find the maximum likelihood estimator for θ .
+ 
+\end_layout
+
+\begin_layout Standard
+(2) Evaluate the MLE for the sample (0.5,0.5,1)
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+(1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mu_{1}\left(\theta\right) & =EX=\frac{\left(\theta+2\right)+\left(\theta+10\right)}{2}=\theta+6=m_{1}=\overline{X}\\
+\iff & \hat{\theta}_{MOM}=\overline{X}-6
+\end{align*}
+
+\end_inset
+
+ (2) 
+\begin_inset Formula 
+\begin{align*}
+\hat{\theta}_{MOM} & =\overline{X}-6=\left(\frac{12.3+17.5+15.1+14.7}{4}-6\right) & =8.9
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+It is assumed that the daily amount of rain (in mm) that falls in London
+ during January is distributed 
+\begin_inset Formula $N\left(\mu,25\right)$
+\end_inset
+
+.
+ We are interested in estimating 
+\begin_inset Formula $P\left(X>75\right)$
+\end_inset
+
+.
+ Two approaches were suggested: 
+\end_layout
+
+\begin_layout Problem
+A.
+ Estimate 
+\begin_inset Formula $\mu$
+\end_inset
+
+ using the method of moments, and then estimate the probability using 
+\begin_inset Formula $\hat{\mu}_{MOM}$
+\end_inset
+
+ instead of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ in the normal distribution.
+ 
+\end_layout
+
+\begin_layout Problem
+B.
+ Don’t assume normality.
+ Estimate the probability by calculating the proportion of observations
+ that are greater than 75.
+ 
+\end_layout
+
+\begin_layout Problem
+In a random sample of 10 observations, the following results were received:
+ 
+\begin_inset Formula 
+\begin{align*}
+\left\{ 68.49,63.61,71.22,76.38,75.99,78.66,59.08,68.82,75.47,64.56\right\} 
+\end{align*}
+
+\end_inset
+
+ (1) Estimate the required probability using both methods and compare the
+ results.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) Estimate the probability 
+\begin_inset Formula $P\left(X>72\right)$
+\end_inset
+
+ using both methods and compare the results.
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+(1) with MEM:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\hat{\mu}_{MEM} & =\frac{68.49+63.61+71.22+76.38+75.99+78.66+59.08+68.82+75.47+64.56}{10}=70.22\\
+P\left(X>75\right) & =1-P\left(X\leq75\right)=1-P\left(\frac{X-\mu}{\sigma}\leq\frac{75-\mu}{\sigma}\right)=1-\phi\left(\frac{75-70.22}{5}\right)=1-\phi\left(0.956\right)=1-0.8306=0.1694
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P\left(X>75\right) & =\frac{1}{10}\sum_{i=1}^{10}I\left\{ X>75\right\} =0.4
+\end{align*}
+
+\end_inset
+
+ (2) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P\left(X>72\right) & =1-P\left(X\leq72\right)=1-P\left(z\leq\frac{72-70.22}{5}\right)=1-\phi\left(0.356\right)\approx0.36\\
+P\left(X>72\right) & =\frac{1}{10}\sum_{i=1}^{10}I\left\{ X>72\right\} =0.4
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+is known that an existing drug improves the health situation of 40% of the
+ patients.
+ 
+\end_layout
+
+\begin_layout Problem
+Let p be the probability of a positive effect of a new drug.
+ After making sure that the side effects of the new drug are not different
+ than those of the existing drug, the ministry of health wants to test whether
+ the new drug has a bigger rate of success.
+ 
+\end_layout
+
+\begin_layout Problem
+To this end, a random sample of size n is drawn and a hypothesis test is
+ planned.
+\end_layout
+
+\begin_layout Problem
+(1) Formulate the hypotheses H0 and H1.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) We reject the null if { ˆp > c}.
+ Find c using the normal approximation for significance level α = 0.05.
+ 
+\end_layout
+
+\begin_layout Problem
+(3) Compute the power of the test at the point p = 0.55 (you should get some
+ function of n).
+ 
+\end_layout
+
+\begin_layout Problem
+(4) Following the previous part, find the minimal sample size n for which
+ the power at the point p = 0.55 is at least 0.8
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\lambda;\boldsymbol{X}\right)=P\left(x_{1}\cap x_{2}\cap\cdots\cap x_{n};\lambda\right) & \underset{iid}{=}\prod_{i=1}^{n}\frac{\lambda^{x_{i}}e^{-\lambda}}{x_{i}!}\\
+\iff\mathscr{\ell}\left(\lambda;\boldsymbol{X}\right)= & \sum_{i=1}^{n}x_{i}\cdot log\left(\lambda\right)-n\cdot\lambda-\sum_{i=1}^{n}log\left(x_{i}!\right)\\
+\iff\\
+\frac{\partial\mathscr{\ell}\left(\lambda;X\right)}{\partial\lambda} & =\frac{\sum_{i=1}^{n}x_{i}}{\lambda}-n\underset{FOC}{=}0\implies\hat{\lambda}_{MLE}=\frac{1}{n}\sum_{i=1}^{n}x_{i}=\overline{X}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that 
+\begin_inset Formula 
+\begin{align*}
+E\left(\hat{\lambda}_{MLE}-\lambda\right) & =E\left(\overline{X}-\lambda\right)=E\overline{X}-\lambda=0\\
+\implies & Bias\left(\hat{\lambda}_{MLE}\right)=0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+MSE\left(\hat{\lambda}_{MLE}\right) & =Var\left(\hat{\lambda}_{MLE}\right)+Bias^{2}\left(\hat{\lambda}_{MLE}\right)=Var\left(\hat{\lambda}_{MLE}\right)+0\\
+ & =Var\left(\frac{1}{n}\sum_{i}X_{i}\right)=\frac{1}{n^{2}}\cdot Var\left(\sum_{i}X_{i}\right)\underset{iid}{=}\frac{1}{n^{2}}\cdot n\cdot Var\left(X_{i}\right)\\
+ & =\frac{1}{n}\cdot\lambda\\
+\iff\\
+MSE\left(\hat{\lambda}_{MLE}\right) & =\frac{\lambda}{n}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(2) we are given 
+\begin_inset Formula $T=\frac{3+\lambda}{2}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+E\left(T\right) & =E\left(\frac{\overline{X}+3}{2}\right)=\frac{1}{2}E\overline{X}+\frac{3}{2}=\frac{1}{2}\lambda+\frac{3}{2}\underset{\lambda\neq3}{\neq}\lambda\implies T\ is\ Baised
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+MSE\left(T\right) & =Var\left(T\right)+Bias^{2}\left(\hat{\lambda}_{MLE}\right)\\
+ & =\frac{1}{4}Var\left(\overline{X}\right)+\left(\frac{1}{2}\lambda+\frac{3}{2}-\lambda\right)^{2}\\
+ & \underset{iid}{=}\frac{1}{4}\cdot\frac{\lambda}{n}+\frac{1}{4}\left(3-\lambda\right)^{2}\\
+\iff\\
+MSE\left(T\right) & =\frac{1}{4}\left[\frac{\lambda}{n}+\left(3-\lambda\right)^{2}\right]
+\end{align*}
+
+\end_inset
+
+ (3) 
+\begin_inset Formula 
+\begin{align*}
+Var\left(T\right)=\frac{1}{4}Var\left(\overline{X}\right) & <Var\left(\overline{X}\right)=Var\left(\hat{\lambda}_{MLE}\right)\ \forall n\in N
+\end{align*}
+
+\end_inset
+
+ and 
+\begin_inset Formula 
+\begin{align*}
+Bias^{2}\left(T\right)=\left(\frac{3-\lambda}{2}\right)^{2} & \underset{\lambda\neq3}{>}0=Bias^{2}\left(\hat{\lambda}_{MLE}\right)\\
+Bias^{2}\left(T\right) & \underset{\lambda=3}{=}0=Bias^{2}\left(\hat{\lambda}_{MLE}\right)
+\end{align*}
+
+\end_inset
+
+We can say that if 
+\begin_inset Formula $\lambda\neq3$
+\end_inset
+
+ than 
+\begin_inset Formula $T$
+\end_inset
+
+ has higher squared bias and lower variance.
+\begin_inset Newline newline
+\end_inset
+
+(4) As 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+ we get:
+\begin_inset Formula 
+\begin{align*}
+MSE\left(T\right)=\frac{1}{4}\left[\frac{\lambda}{n}+\left(3-\lambda\right)^{2}\right]\underset{n\to\infty}{=}\frac{\left(3-\lambda\right)^{2}}{4}\underset{\lambda\neq3}{>}0= & MSE\left(\hat{\lambda}_{MLE}\right)
+\end{align*}
+
+\end_inset
+
+while only if 
+\begin_inset Formula $\lambda=3$
+\end_inset
+
+ we get that 
+\end_layout
+
+\end_body
+\end_document
