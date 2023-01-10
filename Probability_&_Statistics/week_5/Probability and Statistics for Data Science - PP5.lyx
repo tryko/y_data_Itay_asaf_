@@ -1,0 +1,852 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Probability and Statistics - P&P 5 
+\end_layout
+
+\begin_layout Author
+Submission by: Elia Yakin & Itay Koren
+\end_layout
+
+\begin_layout Problem
+Suppose that you received a free subscription to the lottery and you want
+ to know whether you are in the regular track (probability 0.1 to win) or
+ the premium track (probability 0.25 to win).
+ To this end, you start counting the weeks in which you participated up
+ to (and including) the first win.
+ You set a decision rule: If you win before week 6, you will conclude that
+ you are on the premium track.
+ 
+\end_layout
+
+\begin_layout Problem
+(1) Define an appropriate random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ and determine its distribution.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) Formulate the hypotheses 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Problem
+(3) Write the rejection region of 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ it terms of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Problem
+(4) Compute type I and type II errors.
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+(1) From the above we can think of 
+\begin_inset Formula $X$
+\end_inset
+
+ being a series of random bernouli trials 
+\begin_inset Formula $X_{i}\sim Ber\left(\theta\right)$
+\end_inset
+
+ up to the on in which win the lottery.
+ this description fits the geometric distribution 
+\begin_inset Formula $X\sim Geo\left(\theta\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is dependant on the track 
+\begin_inset Formula $\theta=\begin{cases}
+0.1 & regular\ track\\
+0.25 & premium\ track
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(2) 
+\begin_inset Formula $H_{0}:\ \theta=0.1$
+\end_inset
+
+ 
+\begin_inset Formula $H_{1}:\ \theta=0.25$
+\end_inset
+
+.
+ we reject 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ if we win before week 6, i.e.
+ the rejection region is 
+\begin_inset Formula 
+\begin{align*}
+\Omega_{1} & =\left\{ k\,:\ k<6\right\} \\
+\Omega_{0} & =\left\{ k\,:\ k\geq6\right\} 
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(3) 
+\begin_inset Formula 
+\begin{align*}
+P\left(X<6\right) & =1-\left(1-\theta\right)^{5}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(4) 
+\begin_inset Formula 
+\begin{align*}
+\alpha & =P_{\theta_{0}}\left(X<6\right)=1-\left(1-\theta_{0}\right)^{5}=1-0.9^{5}=0.40951\\
+\beta & =P_{\theta_{1}}\left(X\geq6\right)=\left(1-\theta_{1}\right)^{5}=0.75^{5}=0.2373
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+The advertisement of the fast food chain of restaurants “FastBurger” claims
+ that the average waiting time for food in its branches is 30 seconds unlike
+ the 50 seconds of their competitors.
+ Mr.
+ Skeptic does not believe much in advertising and decided to test its truth
+ by the following test: he will go to one of the “FastBurger” branches,
+ measure the waiting time, and if it is less than 40 seconds (the critical
+ waiting time he fixed) he would believe in its advertisement.
+ Otherwise, he will conclude that the service in “FastBurger” is no faster
+ than in other fast food companies.
+ Mr.Skeptic also assumes that waiting time is exponentially distributed.
+ 
+\end_layout
+
+\begin_layout Problem
+(1) What are the hypotheses Mr.
+ Skeptic tests? Calculate the probabilities of errors of both types for
+ his test.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) Can you suggest a better test to Mr.
+ Skeptic with the same significance level?
+\end_layout
+
+\begin_layout Subsection*
+Answer:
+\end_layout
+
+\begin_layout Standard
+(1) 
+\begin_inset Formula 
+\begin{align*}
+H_{0} & :\mu=50\\
+H_{1} & :\mu=30
+\end{align*}
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\alpha & =P_{H_{0}}\left(\overline{X}<40\right)=1-e^{-1/\mu_{0}\cdot40}=1-e^{-\frac{40}{50}}\approx0.55\\
+\beta & =P_{H_{1}}\left(\overline{X}\geq40\right)=1-\left(1-e^{-1/\mu_{1}\cdot40}\right)=e^{-\frac{40}{30}}\approx0.26
+\end{align*}
+
+\end_inset
+
+ (2) we can use Neyman-Pearson's lemma to ensure higher power given the
+ same 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda\left(x\right) & =\frac{L\left(30,x_{i}\right)}{L\left(50,x_{i}\right)}=\frac{P_{H_{1}}\left(x_{i}\right)}{P_{H_{0}}\left(x_{i}\right)}=\frac{1-e^{-1/30\cdot x_{i}}}{1-e^{-1/50\cdot x_{i}}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Let 
+\begin_inset Formula $X_{1},\dots,X_{n}$
+\end_inset
+
+ be i.i.d s.t 
+\begin_inset Formula $X_{i}'s$
+\end_inset
+
+ pdf is 
+\begin_inset Formula 
+\begin{align*}
+f_{\theta}\left(x\right) & =\frac{x}{\theta}\cdot e^{-\frac{x^{2}}{2\theta}}\ \ x\geq0,\theta>0
+\end{align*}
+
+\end_inset
+
+ Use the Neyman-Pearson lemma to find the most powerful test at level 
+\begin_inset Formula $α$
+\end_inset
+
+ for testing the two simple hypotheses: 
+\begin_inset Formula 
+\begin{align*}
+H_{0}: & \theta=\theta_{0}\\
+H_{1}: & \theta=\theta_{1}
+\end{align*}
+
+\end_inset
+
+ where 
+\begin_inset Formula $\theta_{1}>\theta_{0}$
+\end_inset
+
+.
+ hint 
+\begin_inset Formula $\sum_{i=1}^{n}X_{i}^{2}/\theta\sim\chi_{2n}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Answer:
+\end_layout
+
+\begin_layout Standard
+we want to find a simplification 
+\begin_inset Formula $T\left(X\right)$
+\end_inset
+
+ of 
+\begin_inset Formula $\lambda\left(x\right)$
+\end_inset
+
+ s.t 
+\begin_inset Formula $P\left(T\left(x\right)>c\right)$
+\end_inset
+
+ for the rejection region.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda\left(x\right) & =\frac{\mathcal{L}\left(\theta_{1},X\right)}{\mathcal{L}\left(\theta_{0},X\right)}=\frac{P\left(X=X_{1},X=X_{2},\dots,X=X_{n};\theta_{1}\right)}{P\left(X=X_{1},X=X_{2},\dots,X=X_{n};\theta_{0}\right)}\\
+ & \underset{iid}{=}\frac{\prod_{i=1}^{n}\frac{x_{i}}{\theta_{1}}\cdot e^{-\frac{x_{i}^{2}}{2\theta_{1}}}}{\prod_{i=1}^{n}\frac{x_{i}}{\theta_{0}}\cdot e^{-\frac{x_{i}^{2}}{2\theta_{0}}}}=\frac{\left(\frac{1}{\theta_{1}}\right)^{n}\cdot\prod_{i=1}^{n}e^{-\frac{x_{i}^{2}}{2\theta_{1}}}}{\left(\frac{1}{\theta_{0}}\right)^{n}\cdot\prod_{i=1}^{n}e^{-\frac{x_{i}^{2}}{2\theta_{0}}}}\\
+ & =\left(\frac{\theta_{0}}{\theta_{1}}\right)^{n}\cdot\frac{e^{-\frac{1}{2}\sum_{i=1}^{n}\frac{x_{i}^{2}}{\theta_{1}}}}{e^{-\frac{1}{2}\sum_{i=1}^{n}\frac{x_{i}^{2}}{\theta_{0}}}}\\
+ & =\left(\frac{\theta_{0}}{\theta_{1}}\right)^{n}e^{-\frac{1}{2}\left(\sum_{i=1}^{n}\frac{x_{i}^{2}}{\theta_{1}}-\sum_{i=1}^{n}\frac{x_{i}^{2}}{\theta_{0}}\right)}\\
+ & =\left(\frac{\theta_{0}}{\theta_{1}}\right)^{n}e^{-\frac{1}{2}\left(\sum_{i=1}^{n}x_{i}^{2}\left(\frac{1}{\theta_{1}}-\frac{1}{\theta_{0}}\right)\right)}
+\end{align*}
+
+\end_inset
+
+ we know that 
+\begin_inset Formula $\theta_{1}>\theta_{0}$
+\end_inset
+
+ and that the rejection region is so by mnipulation we can do the following:
+\begin_inset Formula 
+\begin{align*}
+\left\{ \lambda\left(X\right)\geq c\right\}  & =\left\{ \left(\frac{\theta_{0}}{\theta_{1}}\right)^{n}e^{-\frac{1}{2}\left(\sum_{i=1}^{n}x_{i}^{2}\left(\frac{1}{\theta_{1}}-\frac{1}{\theta_{0}}\right)\right)}\geq c\right\} \\
+ & =\left\{ n\cdot log\left(\frac{\theta_{0}}{\theta_{1}}\right)-\frac{1}{2}\left(\frac{1}{\theta_{1}}-\frac{1}{\theta_{0}}\right)\sum_{i=1}^{n}x_{i}^{2}\geq log\left(c\right)\right\} \\
+ & \underset{\theta_{1}>\theta_{0}}{=}\left\{ \sum_{i=1}^{n}x_{i}^{2}\geq\frac{log\left(c\right)-n\cdot log\left(\frac{\theta_{0}}{\theta_{1}}\right)}{\frac{1}{2}\left(\frac{1}{\theta_{0}}-\frac{1}{\theta_{1}}\right)}\right\} \\
+ & c^{*}:=\frac{log\left(c\right)-n\cdot log\left(\frac{\theta_{0}}{\theta_{1}}\right)}{\frac{1}{2}\left(\frac{1}{\theta_{0}}-\frac{1}{\theta_{1}}\right)}\\
+ & \implies\left\{ \sum_{i=1}^{n}X_{i}^{2}\geq c^{*}\right\} \underset{\theta_{0}>0}{\iff}\left\{ \sum_{i=1}^{n}X_{i}^{2}/\theta_{0}\geq c^{*}/\theta_{0}\right\} 
+\end{align*}
+
+\end_inset
+
+ and because 
+\begin_inset Formula $\sum_{i=1}^{n}x_{i}^{2}/\theta\sim\chi_{2n}^{2}$
+\end_inset
+
+ we can write 
+\begin_inset Formula 
+\begin{align*}
+\alpha & =P_{H_{0}}\left(\sum_{i=1}^{n}X_{i}^{2}/\theta_{0}\geq c^{*}/\theta_{0}\right)=1-P_{H_{0}}\left(\sum_{i=1}^{n}X_{i}^{2}/\theta_{0}\leq c^{*}/\theta_{0}\right)\iff c^{*}=\theta_{0}\chi_{2n,1-\alpha}^{2}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+The lifetime of an automatic gear has normal distribution with known standard
+ deviation of 30,000 km.
+ The manufacturer claims that the expected lifetime is more than 120,000
+ km.
+ To test the claim of the manufacturer, a sample of 15 cars was drawn.
+ The average lifetime of the cars in the sample is 135,320 km.
+\end_layout
+
+\begin_layout Problem
+(1) Formulate the hypotheses 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) Would you reject the null hypothesis with significance level of 5%?
+ 
+\end_layout
+
+\begin_layout Problem
+(3) What is the minimal significance level for which you would reject the
+ null?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Answer:
+\end_layout
+
+\begin_layout Standard
+(1) 
+\begin_inset Formula 
+\begin{align*}
+H_{0}: & \mu\leq120,000\\
+H_{1}: & \mu>120,000
+\end{align*}
+
+\end_inset
+
+ (2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+PV & =\underset{\mu\in M_{0}}{sup}P_{\mu,H_{0}}\left(T\left(x\right)\leq t_{obs}\right)\\
+ & =P_{\mu_{0}}\left(\overline{X}\leq135,320\right)\\
+ & \iff\\
+PV & =\phi\left(\frac{135,320-120,000}{30,000/\sqrt{15}}\right)=\phi\left(\sqrt{15}\frac{383}{750}\right)=\phi\left(1.977\right)=0.024
+\end{align*}
+
+\end_inset
+
+ we clearly reject the null in 0.05 significance level as 
+\begin_inset Formula $0.05>0.024$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(3) the minimal significance level we choose is the p-value which is 
+\begin_inset Formula $0.024$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem
+In the lecture, we saw that for 
+\begin_inset Formula $X_{1},...,X_{n}\overset{i.i.d.}{\sim}N\left(\theta,\sigma^{2}\right)$
+\end_inset
+
+ (
+\begin_inset Formula $σ^{2}$
+\end_inset
+
+ known), the two-sided hypothesis test for 
+\begin_inset Formula 
+\begin{align*}
+H_{0} & \theta=\theta_{0}\\
+H_{1} & \theta\neq\theta_{0}
+\end{align*}
+
+\end_inset
+
+ is given by the rejection region 
+\begin_inset Formula 
+\begin{align*}
+R & \left\{ \left|\overline{X}_{n}-\theta_{0}\right|\geq c\right\} 
+\end{align*}
+
+\end_inset
+
+Show that for significance level 
+\begin_inset Formula $α$
+\end_inset
+
+, 
+\begin_inset Formula $c=z_{1−α/2}\cdot\sigma/\sqrt{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Answer:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\alpha & =P_{H_{o}}\left(\left|\overline{X}_{n}-\theta_{0}\right|\geq c\right)\\
+ & =P_{H_{o}}\left(\left\{ c\leq\overline{X}_{n}-\theta_{0}\right\} \cup\left\{ \overline{X}_{n}-\theta_{0}\leq-c\right\} \right)\\
+ & =P_{H_{o}}\left(c\leq\overline{X}_{n}-\theta_{0}\right)+P_{H_{o}}\left(\overline{X}_{n}-\theta_{0}\leq-c\right)\\
+ & =P_{H_{o}}\left(\frac{c+\theta_{0}-\theta_{0}}{\sigma/\sqrt{n}}\leq\frac{\overline{X}_{n}-\theta_{0}}{\sigma/\sqrt{n}}\right)+P_{H_{o}}\left(\frac{\overline{X}_{n}-\theta_{0}}{\sigma/\sqrt{n}}\leq\frac{-c}{\sigma/\sqrt{n}}\right)\\
+ & =1-\Phi\left(\frac{c}{\sigma/\sqrt{n}}\right)+\Phi\left(\frac{-c}{\sigma/\sqrt{n}}\right)\\
+ & \underset{\Phi\ symmetric}{=}2\cdot\left(1-\Phi\left(\frac{c}{\sigma/\sqrt{n}}\right)\right)\\
+ & \iff\\
+ & \Phi^{-1}\left(1-\alpha/2\right)=z_{1-\frac{\alpha}{2}}=\frac{c}{\sigma/\sqrt{n}}\iff c=z_{1-\frac{\alpha}{2}}\cdot\sigma/\sqrt{n}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+This problem is a guided proof of the well-known one-sample t-test.
+\end_layout
+
+\begin_layout Problem
+let 
+\begin_inset Formula $X_{1},...,X_{n}\overset{i.i.d.}{\sim}N\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $σ^{2}$
+\end_inset
+
+ is unknown, and we want to test 
+\begin_inset Formula $H_{0}:\mu=\mu_{0}$
+\end_inset
+
+ against the two-sided alternative 
+\begin_inset Formula $\mu\neq\mu_{0}$
+\end_inset
+
+.
+ Denote for simplicity 
+\begin_inset Formula $\theta=\left(\mu,\sigma^{2}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Problem
+(1) Write the likelihood function of 
+\begin_inset Formula $X_{1},..,X_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(2) Plug-in the MLE estimators for 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $σ^{2}$
+\end_inset
+
+ in the likelihood function.
+ Explain why the obtained expression is 
+\begin_inset Formula $sup_{\theta\in\Theta}\mathcal{L}\left(\theta;X\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Problem
+(3) Plug-in 
+\begin_inset Formula $\mu_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{σ}^{2}=\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}$
+\end_inset
+
+ in the likelihood function.
+ Explain why the obtained expression is 
+\begin_inset Formula $sup_{\theta\in\Theta_{0}}\mathcal{L}\left(\theta;X\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(4) Show that the generalized likelihood ratio is 
+\begin_inset Formula 
+\begin{align*}
+\lambda^{*}\left(X\right) & =\left(1+\frac{1}{n+1}\left(\frac{\overline{X_{n}}-\mu_{0}}{s/\sqrt{n}}\right)^{2}\right)^{n/2}
+\end{align*}
+
+\end_inset
+
+ where 
+\begin_inset Formula $s^{2}=\frac{1}{n-1}\sum_{n=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(5) Define 
+\begin_inset Formula 
+\begin{align*}
+T\left(X\right) & =\frac{\overline{X_{n}}-\mu_{0}}{s/\sqrt{n}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Explain why the rejection region 
+\begin_inset Formula $\left\{ \lambda^{*}\left(X\right)\geq c\right\} $
+\end_inset
+
+ is equivalent to the rejection region 
+\begin_inset Formula $\left\{ T\left(X\right)\geq c^{*}\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(6) What is the distribution of 
+\begin_inset Formula $T\left(X\right)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+(7) Find the critical 
+\begin_inset Formula $c^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Answer:
+\end_layout
+
+\begin_layout Standard
+(1) 
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\theta;X\right) & =P\left(\bigcap_{i=1}^{n}X=X_{i}\right)\underset{iid}{=}\prod_{i=1}^{n}\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x_{i}-\mu}{\sigma}\right)^{2}}
+\end{align*}
+
+\end_inset
+
+ (2) Reminder: 
+\begin_inset Formula 
+\begin{align*}
+\theta_{MLE} & =\left(\mu_{MLE},\sigma_{MLE}^{2}\right)=\left(\overline{X}_{n},\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}_{n}\right)^{2}\right)
+\end{align*}
+
+\end_inset
+
+ thus 
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\theta_{MLE};X\right) & =\prod_{i=1}^{n}\frac{1}{\sqrt{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}_{n}\right)^{2}}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x_{i}-\overline{X}_{n}}{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}_{n}\right)}\right)^{2}}\\
+ & =\left(\frac{1}{\sqrt{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}_{n}\right)^{2}}\sqrt{2\pi}}\right)^{n}e^{-\frac{1}{2}\left(\frac{\sum_{n=1}^{n}x_{i}-\overline{X}_{n}}{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}_{n}\right)}\right)^{2}}\\
+ & =\left(\hat{\sigma}_{MLE}^{2}2\pi\right)^{-\frac{n}{2}}e^{-\frac{n}{2}}
+\end{align*}
+
+\end_inset
+
+ we know that we get 
+\begin_inset Formula $\theta_{MLE}$
+\end_inset
+
+ by taking the FOC of 
+\begin_inset Formula $\mathcal{L}\left(\cdot,X\right)$
+\end_inset
+
+ and thus 
+\begin_inset Formula $\theta_{MLE}=argmax_{\theta\in\Theta}\mathcal{L}\left(\theta,X\right)$
+\end_inset
+
+ and under the assumption that 
+\begin_inset Formula $sup\left\{ \Theta\right\} \subseteq\Theta$
+\end_inset
+
+ we get 
+\begin_inset Formula $\theta_{MLE}=sup\left\{ \Theta\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(3) under the null space 
+\begin_inset Formula $\hat{\mu}=\mu_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\hat{\mu}\right)^{2}=\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}$
+\end_inset
+
+ thus we get 
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\left(\mu_{0},\hat{σ}^{2}\right);X\right) & =\prod_{i=1}^{n}\frac{1}{\sqrt{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x_{i}-\mu_{0}}{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\mu_{0}\right)}\right)^{2}}\\
+ & =\left(\frac{1}{\sqrt{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}}\sqrt{2\pi}}\right)^{n}e^{-\frac{n}{2}}\\
+ & =\left(\sigma_{0}^{2}2\pi\right)^{-\frac{n}{2}}e^{-\frac{n}{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(4) we need to show that 
+\begin_inset Formula 
+\begin{align*}
+\lambda^{*}\left(X\right) & =\left(1+\frac{1}{n+1}\left(\frac{\overline{X_{n}}-\mu_{0}}{s/\sqrt{n}}\right)^{2}\right)^{n/2}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+to do so we can use the previous results, but before that for an unknown
+ 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+we can write 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\lambda\left(X\right) & =\frac{sup_{\theta\in\Theta}\mathcal{L}\left(\theta,X\right)}{sup_{\theta\in\Theta_{0}}\mathcal{L}\left(\theta,X\right)}=\frac{\mathcal{L}\left(\theta_{MLE},X\right)}{\mathcal{L}\left(\theta_{0},X\right)}\\
+ & =\frac{\left(\hat{\sigma}_{MLE}^{2}2\pi\right)^{-\frac{n}{2}}e^{-\frac{n}{2}}}{\left(\sigma_{0}^{2}2\pi\right)^{-\frac{n}{2}}e^{-\frac{n}{2}}}=\frac{\left(\hat{\sigma}_{MLE}^{2}\right)^{-\frac{n}{2}}}{\left(\sigma_{0}^{2}\right)^{-\frac{n}{2}}}\\
+ & =\left(\frac{\sigma_{0}^{2}}{\hat{\sigma}_{MLE}^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(\frac{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\mu_{0}\right)^{2}}{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(\frac{\sum_{n=1}^{n}\left(X_{i}-\overline{X}+\overline{X}-\mu_{0}\right)^{2}}{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(\frac{\sum_{n=1}^{n}\left(\left(X_{i}-\overline{X}\right)+\left(\overline{X}-\mu_{0}\right)\right)^{2}}{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(\frac{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}+\sum_{n=1}^{n}\left(\overline{X}-\mu_{0}\right)^{2}+2\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)\left(\overline{X}-\mu_{0}\right)}{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(\frac{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}+n\cdot\left(\overline{X}-\mu_{0}\right)^{2}+2\cdot0\cdot\left(\overline{X}-\mu_{0}\right)}{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(\frac{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}+n\left(\overline{X}-\mu_{0}\right)^{2}}{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(1+\frac{n\left(\overline{X}-\mu_{0}\right)^{2}}{\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(1+\frac{\left(\overline{X}-\mu_{0}\right)^{2}}{\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(1+\frac{\left(\overline{X}-\mu_{0}\right)^{2}}{\left(\frac{n-1}{n-1}\right)\frac{1}{n}\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(1+\frac{\left(\overline{X}-\mu_{0}\right)^{2}}{\left(\frac{n-1}{n}\right)\frac{1}{n-1}\sum_{n=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(1+\frac{\left(\overline{X}-\mu_{0}\right)^{2}}{\left(\frac{n-1}{n}\right)s^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(1+\left(\frac{n}{n-1}\right)\frac{\left(\overline{X}-\mu_{0}\right)^{2}}{s^{2}}\right)^{\frac{n}{2}}\\
+ & =\left(1+\frac{1}{n-1}\left(\frac{\overline{X}-\mu_{0}}{s/\sqrt{n}}\right)^{2}\right)^{\frac{n}{2}}
+\end{align*}
+
+\end_inset
+
+ (5) Let 
+\begin_inset Formula $T\left(X\right)=\frac{\overline{X_{n}}-\mu_{0}}{s/\sqrt{n}}$
+\end_inset
+
+ thus
+\begin_inset Formula 
+\begin{align*}
+\lambda\left(x\right) & =\left(1+\frac{1}{n-1}T\left(X\right)^{2}\right)^{\frac{n}{2}}\ge c\\
+\underset{}{\iff} & 1+\frac{1}{n-1}T\left(X\right)^{2}\ge c^{\frac{2}{n}}\\
+\underset{n>1}{\iff} & T\left(X\right)^{2}\geq\left(n-1\right)\left(c^{\frac{2}{n}}-1\right)\\
+\underset{*}{\iff} & \left|T\left(X\right)\right|\geq\left(\left(n-1\right)\left(c^{\frac{2}{n}}-1\right)\right)^{1/2}:=c^{*}\\
+\iff & \left|T\left(X\right)\right|\geq c^{*}
+\end{align*}
+
+\end_inset
+
+ *: T
+\begin_inset Formula $\left(X\right)$
+\end_inset
+
+could be negative or positive, thus we need to take it's absolute value.
+\end_layout
+
+\begin_layout Standard
+(6) 
+\begin_inset Formula $T\left(X\right)$
+\end_inset
+
+ distribution is the known Student's t-distribution with 
+\begin_inset Formula $n-1$
+\end_inset
+
+ degrees of freedom (why is it only one df less? whe have 
+\begin_inset Formula $s^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\overline{X}$
+\end_inset
+
+ we estimate out of the sample)
+\end_layout
+
+\begin_layout Standard
+(7) 
+\begin_inset Formula 
+\begin{align*}
+\alpha & =sup_{\theta\in\Theta_{0}}P_{\theta}\left(\left|T\left(x\right)\right|\geq c^{*}\right)=P_{\theta_{0}}\left(\left|T\left(x\right)\right|\geq c^{*}\right)\\
+ & \underset{t\ symetric}{=}2P_{\theta_{0}}\left(T\left(x\right)\geq c^{*}\right)=2\left(1-P_{\theta_{0}}\left(T\left(x\right)\leq c^{*}\right)\right)\\
+ & \iff\\
+c & ^{*}=t_{n-1,1-\frac{\alpha}{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

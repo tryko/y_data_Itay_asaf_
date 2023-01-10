@@ -1,0 +1,829 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Probability and Statistics - P&P 2 
+\end_layout
+
+\begin_layout Author
+Submission by: Elia Yakin & Itay Koren
+\end_layout
+
+\begin_layout Problem
+Let 
+\begin_inset Formula $X\sim U\left(1,5\right)$
+\end_inset
+
+ (discrete).
+ Define a new random variable 
+\begin_inset Formula $Y=3^{X}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(1) What is the probability mass function of Y? 
+\end_layout
+
+\begin_layout Problem
+(2) Compute the expected value of Y.
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+(1) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Supp\left(Y\right)=\left\{ y_{1},y_{2},\dots,y_{5}\right\} =\left\{ 3,3^{2},3^{3},3^{4},3^{5}\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Using log rules we can write 
+\begin_inset Formula $Y=3^{X}\iff X=log_{3}Y=X$
+\end_inset
+
+, Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P_{Y}\left(Y=y\right) & =P_{X}\left(X=log_{3}y\right)\underset{X\sim U}{=}\frac{1}{log_{3}y_{5}-log_{3}y_{1}+1}=\frac{1}{log_{3}3^{5}-log_{3}3^{1}+1}=\frac{1}{5}\ \forall y\in Supp\left(Y\right)
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(2) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $EY=\underset{y\in Supp\left(Y\right)}{\sum}P_{Y}\left(y\right)\cdot y=\underset{y\in Supp\left(Y\right)}{\sum}\frac{1}{5}\cdot y=\frac{1}{5}\underset{y\in Supp\left(Y\right)}{\sum}y=\frac{1}{5}\cdot363$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Problem
+According to the British secret intelligence service, during the war, the
+ expected number of bombs 
+\begin_inset Formula $\left(\mathbb{E}X\right)$
+\end_inset
+
+ that fall per day in each quarter of London is 2.
+ It is known that the number of bombs that fall in one day in each quarter
+ is a Poisson random variable.
+ 
+\end_layout
+
+\begin_layout Problem
+(1) What is the probability that on some day there will be no bombs at all?
+ 
+\end_layout
+
+\begin_layout Problem
+(2) What is the probability that at least 4 bombs will fall on some specific
+ quarter in one day?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(1) we know that is 
+\begin_inset Formula $X\sim Poiss\left(\lambda\right)$
+\end_inset
+
+ then 
+\begin_inset Formula $EX=\lambda$
+\end_inset
+
+ hence 
+\begin_inset Formula $X\sim Poiss\left(2\right)$
+\end_inset
+
+ and thus 
+\begin_inset Formula $P_{X}\left(0\right)=\frac{2^{0}e^{-2}}{0!}=e^{-2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(2) 
+\begin_inset Formula $P\left(X\geq4\right)=1-P\left(X<3\right)=1-\frac{2^{3}e^{-2}}{3!}=1-\frac{2^{3}e^{-2}}{3\cdot2}=1-\frac{4}{3}\cdot e^{-2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a discrete RV.
+ Show that for any constants 
+\begin_inset Formula $a,b\in\mathbb{R}$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Problem
+(1) 
+\begin_inset Formula $E\left(aX+b\right)=aEx+b$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Problem
+(2) 
+\begin_inset Formula $Var\left(aX+b\right)=a^{2}Var\left(X\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+E\left(aX+b\right) & \underset{1}{=}\underset{x\in Supp\left(X\right)}{\sum}\left(a\cdot x+b\right)\cdot P\left(x\right)\\
+ & \underset{2}{=}\underset{x\in Supp\left(X\right)}{\sum}a\cdot x\cdot P\left(x\right)+\underset{x\in Supp\left(X\right)}{\sum}b\cdot P\left(x\right)\\
+ & \underset{3}{=}a\underset{x\in Supp\left(X\right)}{\sum}x\cdot P\left(x\right)+b\underset{x\in Supp\left(X\right)}{\sum}P\left(x\right)\\
+ & \underset{4}{=}aE\left(X\right)+b\cdot1=aE\left(X\right)+b
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1: Expectation definition; 2: Commutative law over sum; 3: Associative law
+ over sum; 4: from PMF definition
+\begin_inset Formula $\underset{x\in Supp\left(X\right)}{\sum}P\left(x\right)=1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Var\left(aX+b\right) & \underset{1}{=}E\left(\left(aX+b\right)-E\left(aX+b\right)\right)^{2}\\
+ & \underset{2}{=}E\left(aX+b-\left(aEX+b\right)\right)^{2}\\
+ & =E\left(aX-aEX\right)^{2}\\
+ & \underset{3}{=}E\left(a\left(X-EX\right)\right)^{2}\\
+ & \underset{4}{=}a^{2}E\left(X-EX\right)^{2}\\
+ & \underset{1}{=}a^{2}Var\left(X\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1: Variace definition; 2: From (1) 3: Associative law 4: 
+\begin_inset Formula $\left(A\cdot B\right)^{2}=A^{2}\cdot B^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Problem
+Give a simple example of some random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ and some function 
+\begin_inset Formula $g\left(\cdot\right)$
+\end_inset
+
+ to show that in general 
+\begin_inset Formula $Eg\left(X\right)\neq g\left(EX\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+let 
+\begin_inset Formula $X\sim U\left(-\frac{1}{2},\frac{1}{2}\right)$
+\end_inset
+
+ hence clearly 
+\begin_inset Formula 
+\begin{align*}
+f_{X}\left(x\right) & =\begin{cases}
+1 & x\in\left[-\frac{1}{2},\frac{1}{2}\right]\\
+0 & o.w
+\end{cases}
+\end{align*}
+
+\end_inset
+
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+EX & =\int_{-1/2}^{1/2}x\cdot1dx=\frac{x^{2}}{2}\mid_{\frac{-1}{2}}^{\frac{1}{2}}=\frac{1}{2}\left[\left(\frac{1}{2}\right)^{2}-\left(-\frac{1}{2}\right)^{2}\right]=0
+\end{align*}
+
+\end_inset
+
+let 
+\begin_inset Formula $g\left(X\right)=X^{2}$
+\end_inset
+
+ thus
+\begin_inset Formula 
+\begin{align*}
+Eg\left(X\right) & =\int_{-1/2}^{1/2}x^{2}dx=\frac{x^{3}}{3}\mid_{-1/2}^{1/2}=\frac{1}{3}\left(\left(\frac{1}{2}\right)^{3}-\left(-\frac{1}{2}\right)^{3}\right)=\frac{1}{3}\cdot\frac{2}{8}=\frac{1}{12}
+\end{align*}
+
+\end_inset
+
+which implies
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+g\left(EX\right) & =0^{2}\neq\frac{1}{12}=Eg\left(X\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+In a multiple-choice exam, there are 10 questions.
+ Each has 4 possible answers (only one correct).
+ Alice didn’t prepare for the exam, so she guessed all her answers.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ denote the number of her correct answers.
+ 
+\end_layout
+
+\begin_layout Problem
+(1) What is the distribution of X? Write it's PMF.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) To pass the test, a student should get 55%.
+ What is the probability that Alice passed the test? 
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+(1) given Alice guessed all her answers, we can write each question as a
+ bernulli trial with 
+\begin_inset Formula $p=\frac{1}{4}$
+\end_inset
+
+ and the test as a Binomial distribution.
+ Thus 
+\begin_inset Formula $X\sim Bin\left(10,\frac{1}{4}\right)$
+\end_inset
+
+.
+ The PMF is defined as:
+\begin_inset Formula 
+\begin{align*}
+P_{X}\left(x\right) & ={10 \choose x}\left(\frac{1}{4}\right)^{x}\left(\frac{3}{4}\right)^{10-x}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(2) 
+\begin_inset Formula 
+\begin{align*}
+P\left(X\geq6\right) & \underset{1}{=}1-P\left(X\leq5\right)=1-\left(\sum_{x=0}^{5}x\cdot P\left(X=x\right)\right)\\
+ & \underset{2}{=}1-\sum_{x=0}^{5}P\left(X=x\right)\\
+ & =1-\left(\sum_{x=0}^{5}{10 \choose x}\left(\frac{1}{4}\right)^{x}\left(\frac{3}{4}\right)^{10-x}\right)\\
+ & =1-\left(\sum_{x=0}^{5}\frac{10!}{x!\left(10-x\right)!}\left(\frac{1}{4}\right)^{x}\left(\frac{3}{4}\right)^{10-x}\right)\\
+ & \approx1-0.98=0.02
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1: 
+\begin_inset Formula $p=1-p^{c}$
+\end_inset
+
+ 2: Notice 
+\begin_inset Formula $P\left(X\geq5\right)=P\left(X=5\right)+P\left(X\geq4\right)=P\left(X=5\right)+\cdots+P\left(X=0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Let X be a random variable with the following density function,
+\end_layout
+
+\begin_layout Problem
+\begin_inset Formula 
+\begin{align*}
+f_{X}\left(x\right) & =\begin{cases}
+ax & x\in\left(0,1\right)\\
+a & x\in\left[1,2\right)\\
+a\left(3-x\right) & x\in\left[2,3\right)\\
+0 & o.w
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+(1) Find the constant 
+\begin_inset Formula $a$
+\end_inset
+
+ for which 
+\begin_inset Formula $f_{X}$
+\end_inset
+
+ is a density function.
+ 
+\end_layout
+
+\begin_layout Problem
+(2) Compute the expectation and variance of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Problem
+(3) Find the cumulative distribution function of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+(1) It is not trivial to show that 
+\begin_inset Formula $\int_{\left(a,b\right)}z\,dz=\int_{\left[a,b\right]}z\,dz$
+\end_inset
+
+ yet it is intuitive and I assume that it can be done.
+\begin_inset Formula 
+\begin{align*}
+1=\int_{\mathbb{R}}f_{X}\left(x\right)dx & =\int_{-\infty}^{0}f_{X}\left(x\right)dx+\int_{0}^{1}f_{X}\left(x\right)dx\\
+ & \ \ +\int_{1}^{2}f_{X}\left(x\right)dx+\int_{2}^{3}f_{X}\left(x\right)dx+\int_{3}^{\infty}f_{X}\left(x\right)dx\\
+ & \underset{1}{=}0+\int_{0}^{1}f_{X}\left(x\right)dx+\int_{1}^{2}f_{X}\left(x\right)dx+\int_{2}^{3}f_{X}\left(x\right)dx+0\\
+ & =\int_{0}^{1}ax\,dx+\int_{1}^{2}a\,dx+\int_{2}^{3}a\left(3-x\right)\,dx\\
+ & =\frac{a}{2}x^{2}\mid_{0}^{1}+ax\mid_{1}^{2}+a\left(3x-\frac{x^{2}}{2}\right)\mid_{2}^{3}\\
+ & =\frac{a}{2}+a+a\left(\left(9-\frac{9}{2}\right)-\left(6-\frac{4}{2}\right)\right)=\frac{a}{2}+a+a\left(3-2.5\right)\\
+\iff & a=\frac{1}{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(2) given 
+\begin_inset Formula $a=\frac{1}{2}$
+\end_inset
+
+ we get 
+\begin_inset Formula 
+\begin{align*}
+f_{X}\left(x\right) & =\begin{cases}
+\frac{x}{2} & x\in\left(0,1\right)\\
+\frac{1}{2} & x\in\left[1,2\right)\\
+\frac{3-x}{2} & x\in\left[2,3\right)\\
+0 & o.w
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+EX=\int_{\mathbb{R}}x\cdot f_{X}\left(x\right)\,dx & =\int_{0}^{1}\frac{x^{2}}{2}\,dx+\int_{1}^{2}\frac{x}{2}\,dx+\int_{2}^{3}\frac{3x-x^{2}}{2}\,dx\\
+ & =\frac{1}{2}\left[\int_{0}^{1}x^{2}\,dx+\int_{1}^{2}x\,dx+\int_{2}^{3}3x-x^{2}\,dx\right]\\
+ & =\frac{1}{2}\left[\frac{1}{3}+\left(\frac{4}{2}-\frac{1}{2}\right)+\left(\left(\frac{27}{2}-\frac{27}{3}\right)-\left(\frac{12}{2}-\frac{8}{3}\right)\right)\right]\\
+ & =\frac{1}{2}\left[\frac{1}{3}+\frac{3}{2}+\frac{7}{6}\right]=\frac{1}{2}\left[\frac{2}{6}+\frac{9}{6}+\frac{7}{6}\right]\\
+ & =\frac{3}{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Var\left(X\right) & =E\left(X-EX\right)^{2}\\
+ & =EX^{2}-E^{2}X\\
+ & =\int_{\mathbb{R}}x^{2}\cdot f_{X}\left(x\right)\,dx-\left(\frac{3}{2}\right)^{2}\\
+ & =\left[\int_{0}^{1}\frac{x^{3}}{2}\,dx+\int_{1}^{2}\frac{x^{2}}{2}\,dx+\int_{2}^{3}\frac{3x^{2}-x^{3}}{2}\,dx\right]-\frac{9}{4}\\
+ & =\frac{1}{2}\left[\frac{x^{4}}{4}\mid_{0}^{1}+\frac{x^{3}}{3}\mid_{1}^{2}+\left(3\frac{x^{3}}{3}-\frac{x^{4}}{4}\right)\mid_{2}^{3}\right]-\frac{9}{4}\\
+ & =\frac{1}{2}\left[\frac{1}{4}+\frac{7}{3}+\left(27-\frac{81}{4}-\left(8-\frac{16}{4}\right)\right)\right]-\frac{9}{4}\\
+ & =\frac{1}{2}\left[\frac{3}{12}+\frac{28}{12}+\frac{3}{3}\left(\frac{92}{4}-\frac{81}{4}\right)\right]-\frac{9}{4}\\
+ & =\frac{1}{2}\left[\frac{31}{12}+\frac{33}{12}\right]-\frac{27}{12}=\frac{1}{2}\cdot\frac{64}{12}-\frac{27}{12}\\
+ & =\frac{5}{12}
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(3) Reminder 
+\begin_inset Formula $F_{X}\left(t\right):=\int_{-\infty}^{t}f_{X}\left(t\right)dt$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+drawing out 
+\begin_inset Formula $f_{X}\left(X\right)$
+\end_inset
+
+ we can see it looks like a trapezoid 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{X}\left(x\right)$
+\end_inset
+
+ as defined in 6.2 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Elia Yakin/Documents/Y-data/Statistics and Probability for DS/prob and stat pp2 q6.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus we can easily write the CDF as an area of the triangle 
+\begin_inset Formula $S_{\left[0,1\right]}\left(x\right)$
+\end_inset
+
+ the rectangle 
+\begin_inset Formula $S_{\left[1,2\right]}\left(x\right)$
+\end_inset
+
+ and the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+trapezoid 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $S_{\left[2,3\right]}\left(x\right)$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+F_{X}\left(x\right) & =\begin{cases}
+0 & x\leq0\\
+S_{\left[0,1\right]}(x) & x\in\left(0,1\right)\\
+S_{\left[1,2\right]}\left(x\right)+S_{\left[0,1\right]}\left(1\right) & x\in\left[1,2\right)\\
+S_{\left[2,3\right]}\left(x\right)+S_{\left[1,2\right]}\left(2\right)+S_{\left[0,1\right]}\left(1\right) & x\in\left[2,3\right)\\
+1 & x\geq3
+\end{cases}=\begin{cases}
+0 & x\leq0\\
+\frac{x\cdot x/2}{2} & x\in\left(0,1\right)\\
+\frac{\left(x-1\right)}{2}\cdot\left(x-1\right)+\frac{1}{4} & x\in\left[1,2\right)\\
+\frac{\left(4-x\right)\left(x-2\right)}{2}+\frac{3}{4} & x\in\left[2,3\right)\\
+1 & x\geq3
+\end{cases}
+\end{align*}
+
+\end_inset
+
+ Just to show that it is equal to integration, I show the following (reminder
+ 
+\begin_inset Formula $S_{trapezoid}=\frac{\left(a+b\right)\cdot h}{2}$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+S_{\left[2,3\right]}\left(x\right) & =\left(\frac{1}{2}+\frac{3-x}{2}\right)\left(x-2\right)/2=\frac{\left(4-x\right)\left(x-2\right)}{2}\\
+ & =\frac{4x-8-x^{2}+2x}{2}=\frac{6x-x^{2}-8}{2}\\
+ & =\frac{6x-x^{2}}{4}-2=\int_{2}^{x}\frac{3-t}{2}\,dt
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem
+Let 
+\begin_inset Formula $X_{1},X_{2},...$
+\end_inset
+
+ be a sequence of independent and identically distributed random variables
+ with distribution 
+\begin_inset Formula $Bin\left(48,1/4\right)$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}$
+\end_inset
+
+.
+ Use the central limit theorem to calculate 
+\begin_inset Formula $P\left(\overline{X}_{144}>12.75\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Answer: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\text{P\left(\overline{X}_{144}>12.75\right)} & =1-P\left(\overline{X}_{144}\leq12.75\right)\\
+ & =1-P\left(\sqrt{144}\cdot\frac{\overline{X}_{144}-\mu_{X}}{\sigma_{X}}\leq\sqrt{144}\cdot\frac{12.75-\mu_{X}}{\sigma_{X}}\right)\\
+ & \underset{CLT}{=}1-P\left(z\leq12\cdot\frac{12.75-\mu_{X}}{\sigma_{X}}\right)\\
+ & =1-\phi\left(12\cdot\frac{12.75-\mu_{X}}{\sigma_{X}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We need to find 
+\begin_inset Formula $\mu_{X},\sigma_{X}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Notice that for 
+\begin_inset Formula $X\sim Bin\left(n,p\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mu_{X} & =EX=E\left[\sum_{i=1}^{n}X_{i}\right]\underset{linearity}{=}\sum_{i=1}^{n}EX_{i}\underset{iid}{=}nEX_{i}\\
+ & =n\left[0\cdot p^{0}\left(1-p\right)^{1}+1\cdot p^{1}\left(1-p\right)^{0}\right]=np\\
+\implies & \mu_{X}=48\cdot\frac{1}{4}=12\\
+Var\left(X\right) & =Var\left(\sum_{i=1}^{n}X_{i}\right)\underset{*}{=}\sum_{i=1}^{n}Var\left(X_{i}\right)\underset{iid}{=}n\cdot Var\left(X_{i}\right)\\
+ & =n\cdot\left[E\left[X_{i}-EX_{i}\right]^{2}\right]=n\cdot\left[EX_{i}^{2}-p^{2}\right]\\
+ & =n\cdot\left[0^{2}\cdot p^{0}\left(1-p\right)^{1}+1^{2}\cdot p^{1}\left(1-p\right)^{0}-p^{2}\right]\\
+ & =n\left[p-p^{2}\right]=np\left(1-p\right)\\
+\implies & \sigma_{X}^{2}=48\cdot\frac{1}{4}\cdot\frac{3}{4}=9\implies\sigma_{X}=3
+\end{align*}
+
+\end_inset
+
+ *: 
+\begin_inset Formula $Cov\left(X_{i},X_{j}\right)=0\ \forall i\neq j$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula 
+\begin{align*}
+P\left(\overline{X}_{144}>12.75\right) & =1-\phi\left(12\cdot\frac{12.75-12}{3}\right)\\
+ & =1-\phi\left(12\cdot\frac{0.75}{3}\right)=1-\phi\left(3\right)\\
+ & =1-0.9987=0.0013
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
